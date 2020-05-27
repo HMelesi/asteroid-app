@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "asteroid-app"
+    }
+  },
+  "defaultProject": "asteroid-app",
+  "cli": {
+    "analytics": "077452fe-d064-478e-b832-693d858c523a"
+  }
 }
