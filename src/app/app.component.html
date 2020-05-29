@@ -1,21 +1,19 @@
-<style></style>
+<link
+  href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap"
+  rel="stylesheet"
+/>
 
 <div class="content" role="main">
-  <!-- Highlight Card -->
-
-  <div>
-    <h1>ASTEROIDS</h1>
-    <h2>Welcome to my site about asteroidsss</h2>
+  <div class="header">
+    <header>
+      <h1 class="title">ASTEROIDS</h1>
+    </header>
+    <nav>
+      <a class="link__white" routerLink="/dateselect" routerLinkActive="active"
+        >find asteroids by date</a
+      >
+    </nav>
   </div>
-  <nav>
-    <ul>
-      <li>
-        <a routerLink="/asteroids" routerLinkActive="active"
-          >asteroids by date</a
-        >
-      </li>
-    </ul>
-  </nav>
 
   <router-outlet></router-outlet>
 </div>

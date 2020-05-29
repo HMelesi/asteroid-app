@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
 import { Detail } from '../detail';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-second',
@@ -13,11 +14,16 @@ export class AsteroidDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dataService: DataService
+    private dataService: DataService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
     this.getAsteroid();
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
   getAsteroid(): void {

@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --color--darkest: #1d1135;
+  --color--dark: #0c164f;
+  --color--pink: #ba1e68;
+  --color--blue: #5643fd;
+  --color--lilac: #7649fe;
+  --color--light: #fcfbfe;
+}
+
+body {
+  background-color: var(--color--darkest);
+}
+
+.content {
+  font-family: "Exo 2", sans-serif;
+  color: var(--color--light);
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link__white {
+  color: var(--color--light);
+}
+
+.link__white:visited {
+  color: var(--color--light);
+}
+
+.title {
+  color: var(--color--pink);
+}
+
+button {
+  background-color: transparent;
+  color: var(--color--blue);
+  border: var(--color--blue) solid 2px;
+  border-radius: 5px;
+  font-family: "Exo 2", sans-serif;
+  font-size: medium;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  border: var(--color--lilac) solid 2px;
+  border-radius: 5px;
+  margin: 10px 0px 10px 0px;
+  padding: 10px;
+}

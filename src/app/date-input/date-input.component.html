@@ -1,0 +1,8 @@
+<p>select a date to see the asteroids</p>
+<div class="dateinput">
+  <label class="dateinput__field"
+    >date:
+    <input class="dateinput__field__date" [(ngModel)]="date" type="date" />
+  </label>
+  <button routerLink="/asteroids/{{ date }}">get asteroids</button>
+</div>

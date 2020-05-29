@@ -1,23 +1,16 @@
-<p>select a date to see the asteroids</p>
-<div>
-  <label
-    >date:
-    <input [(ngModel)]="date" type="date" />
-  </label>
-  <button (click)="getAsteroidData(date)">get asteroids</button>
-</div>
 <div *ngIf="asteroidData">
-  <h3>here is a list of all the near earth objects</h3>
-  <p>
-    there were {{ asteroidData.element_count }} near earth objects on
-    {{ savedDate }}:
-  </p>
+  <h3 class="subheader">
+    There were {{ asteroidData.element_count }} near earth objects on
+    {{ savedDate | date }}:
+  </h3>
+  <p>Click on the asteroid name to find out more</p>
   <ul>
     <li *ngFor="let neo of asteroidList">
-      <a routerLink="/detail/{{ neo.id }}">
-        <p>{{ neo.id }} {{ neo.name }}</p>
+      <a class="link__pink" routerLink="/detail/{{ neo.id }}">
+        <p>
+          {{ neo.name }}
+        </p>
       </a>
-
       <p>
         {{ neo.close_approach_data[0].miss_distance.miles }} miles from earth
       </p>
