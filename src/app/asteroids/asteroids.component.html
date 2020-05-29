@@ -1,0 +1,12 @@
+<p>select a date to see the asteroids</p>
+<div>
+  <label
+    >date:
+    <input [(ngModel)]="date" type="date" />
+  </label>
+  <button (click)="getAsteroidData(date)">get asteroids</button>
+</div>
+<div *ngIf="asteroidData">
+  <h3>here is a list of all the near earth objects</h3>
+  <p>there have been {{ asteroidData.element_count }} near earth objects</p>
+</div>
