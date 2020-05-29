@@ -1,0 +1,20 @@
+:root {
+  --color--darkest: #1d1135;
+  --color--dark: #0c164f;
+  --color--pink: #ba1e68;
+  --color--blue: #5643fd;
+  --color--lilac: #7649fe;
+  --color--light: #fcfbfe;
+}
+
+.link__pink {
+  color: var(--color--pink);
+}
+
+.link__pink:visited {
+  color: var(--color--pink);
+}
+
+.subheader {
+  color: var(--color--blue);
+}

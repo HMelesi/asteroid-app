@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Welcome, NearEarthObjects, The20150907 } from '../date';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-first',
@@ -10,17 +11,22 @@ import { Welcome, NearEarthObjects, The20150907 } from '../date';
 export class AsteroidsComponent implements OnInit {
   asteroidData: Welcome;
   nearEarthObjects: NearEarthObjects;
-  @Input() date: String;
+  date: String;
   savedDate: String;
   asteroidList: The20150907[];
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private dataService: DataService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getAsteroidData();
+  }
 
-  getAsteroidData(date): void {
+  getAsteroidData(): void {
+    const date = this.route.snapshot.paramMap.get('date');
     this.dataService.getAsteroids(date).subscribe((data) => {
-      // console.dir(data);
       this.asteroidData = data;
       this.nearEarthObjects = data.near_earth_objects;
       this.savedDate = date;

@@ -1,0 +1,24 @@
+:root {
+  --color--darkest: #1d1135;
+  --color--dark: #0c164f;
+  --color--pink: #ba1e68;
+  --color--blue: #5643fd;
+  --color--lilac: #7649fe;
+  --color--light: #fcfbfe;
+}
+
+.dateinput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dateinput__field {
+  padding: 0px 0px 20px 0px;
+}
+
+.dateinput__field__date {
+  color: var(--color--blue);
+  border: var(--color--pink) solid 2px;
+  border-radius: 5px;
+}
