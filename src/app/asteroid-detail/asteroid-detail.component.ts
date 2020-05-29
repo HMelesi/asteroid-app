@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
+import { Detail } from '../detail';
 
 @Component({
   selector: 'app-second',
@@ -8,6 +9,8 @@ import { DataService } from '../data.service';
   styleUrls: ['./asteroid-detail.component.css'],
 })
 export class AsteroidDetailComponent implements OnInit {
+  asteroidDetail: Detail;
+
   constructor(
     private route: ActivatedRoute,
     private dataService: DataService
@@ -19,7 +22,9 @@ export class AsteroidDetailComponent implements OnInit {
 
   getAsteroid(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    this.dataService.getAsteroidDetail().subscribe((data) => console.dir(data));
+    this.dataService.getAsteroidDetail(id).subscribe((data) => {
+      console.dir(data);
+      this.asteroidDetail = data;
+    });
   }
 }

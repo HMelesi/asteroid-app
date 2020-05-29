@@ -20,7 +20,7 @@ export class AsteroidsComponent implements OnInit {
 
   getAsteroidData(date): void {
     this.dataService.getAsteroids(date).subscribe((data) => {
-      console.dir(data);
+      // console.dir(data);
       this.asteroidData = data;
       this.nearEarthObjects = data.near_earth_objects;
       this.savedDate = date;
