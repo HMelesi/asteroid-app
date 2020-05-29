@@ -8,5 +8,16 @@
 </div>
 <div *ngIf="asteroidData">
   <h3>here is a list of all the near earth objects</h3>
-  <p>there have been {{ asteroidData.element_count }} near earth objects</p>
+  <p>
+    there were {{ asteroidData.element_count }} near earth objects on
+    {{ savedDate }}:
+  </p>
+  <ul>
+    <li *ngFor="let neo of asteroidList">
+      <p>{{ neo.id }} {{ neo.name }}</p>
+      <p>
+        {{ neo.close_approach_data[0].miss_distance.miles }} miles from earth
+      </p>
+    </li>
+  </ul>
 </div>

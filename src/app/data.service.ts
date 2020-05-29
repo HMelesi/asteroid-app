@@ -2,18 +2,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Welcome } from './date';
+import { Detail } from './detail';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  private REST_API_SERVER = 'https://api.nasa.gov/neo/rest/v1/feed';
+  private asteroidListUrl = 'https://api.nasa.gov/neo/rest/v1/';
+  private asteroidDetailUrl = 'https://api.nasa.gov/neo/rest/v1/neo/';
 
   constructor(private httpClient: HttpClient) {}
 
-  sendGetRequest(date): Observable<Welcome> {
+  getAsteroids(date): Observable<Welcome> {
     return this.httpClient.get<Welcome>(
-      `${this.REST_API_SERVER}?start_date=${date}&end_date=${date}&api_key=WKi3G8uKrwAuCkcjvUU3gf42VFdfbUmrpzD5ju2L`
+      `${this.asteroidListUrl}feed?start_date=${date}&end_date=${date}&api_key=WKi3G8uKrwAuCkcjvUU3gf42VFdfbUmrpzD5ju2L`
+    );
+  }
+
+  getAsteroidDetail(): Observable<Detail> {
+    return this.httpClient.get<Detail>(
+      `${this.asteroidListUrl}neo/3542519?api_key=WKi3G8uKrwAuCkcjvUU3gf42VFdfbUmrpzD5ju2L`
     );
   }
 }

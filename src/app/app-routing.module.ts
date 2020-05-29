@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AsteroidsComponent } from './asteroids/asteroids.component';
-import { SecondComponent } from './second/second.component';
+import { AsteroidDetailComponent } from './asteroid-detail/asteroid-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/asteroids', pathMatch: 'full' },
   { path: 'asteroids', component: AsteroidsComponent },
-  { path: 'second', component: SecondComponent },
+  { path: 'detail/:id', component: AsteroidDetailComponent },
 ];
 
 @NgModule({
