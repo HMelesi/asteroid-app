@@ -9,7 +9,6 @@ import { Detail } from './detail';
 })
 export class DataService {
   private asteroidListUrl = 'https://api.nasa.gov/neo/rest/v1/';
-  private asteroidDetailUrl = 'https://api.nasa.gov/neo/rest/v1/neo/';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -19,9 +18,9 @@ export class DataService {
     );
   }
 
-  getAsteroidDetail(): Observable<Detail> {
+  getAsteroidDetail(id): Observable<Detail> {
     return this.httpClient.get<Detail>(
-      `${this.asteroidListUrl}neo/3542519?api_key=WKi3G8uKrwAuCkcjvUU3gf42VFdfbUmrpzD5ju2L`
+      `${this.asteroidListUrl}neo/${id}?api_key=WKi3G8uKrwAuCkcjvUU3gf42VFdfbUmrpzD5ju2L`
     );
   }
 }

@@ -1,1 +1,34 @@
-<p>yup</p>
+<div *ngIf="asteroidDetail">
+  <h2>{{ asteroidDetail.name }}</h2>
+  <h4>absolute magnitude: {{ asteroidDetail.absolute_magnitude_h }}H</h4>
+  <h4>
+    estimated diameter (miles): minimum:{{
+      asteroidDetail.estimated_diameter.miles.estimated_diameter_min
+    }}
+    maximum:{{ asteroidDetail.estimated_diameter.miles.estimated_diameter_max }}
+  </h4>
+  <h4>
+    potentially hazardous:
+    {{ asteroidDetail.is_potentially_hazardous_asteroid }}
+  </h4>
+  <h4>sentry object: {{ asteroidDetail.is_sentry_object }}</h4>
+
+  <h3>close approach history:</h3>
+  <p>
+    {{ asteroidDetail.name }} has been observed
+    {{ asteroidDetail.close_approach_data.length | number }} times
+  </p>
+
+  <ul>
+    <li *ngFor="let approach of asteroidDetail.close_approach_data">
+      <p>planet: {{ approach.orbiting_body | uppercase }}</p>
+      <p>miss distance: {{ approach.miss_distance.miles | number }} miles</p>
+      <p>
+        speed: {{ approach.relative_velocity.miles_per_hour | number }} miles
+        per hour
+      </p>
+      <p>date: {{ approach.close_approach_date_full | date }}</p>
+      <p></p>
+    </li>
+  </ul>
+</div>
