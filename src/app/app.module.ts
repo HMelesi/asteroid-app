@@ -7,9 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { AsteroidsComponent } from './asteroids/asteroids.component';
 import { AsteroidDetailComponent } from './asteroid-detail/asteroid-detail.component';
 import { DateInputComponent } from './date-input/date-input.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
-  declarations: [AppComponent, AsteroidsComponent, AsteroidDetailComponent, DateInputComponent],
+  declarations: [AppComponent, AsteroidsComponent, AsteroidDetailComponent, DateInputComponent, LoadingComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

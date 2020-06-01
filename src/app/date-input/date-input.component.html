@@ -1,8 +1,16 @@
-<p>select a date to see the asteroids</p>
-<div class="dateinput">
+<h4>
+  Using data collected and shared by NASA, use this search to find all near
+  earth objects for a particular date.
+</h4>
+<div class="dateinput center">
   <label class="dateinput__field"
-    >date:
-    <input class="dateinput__field__date" [(ngModel)]="date" type="date" />
+    >select a date:
+    <input
+      class="dateinput__field__date"
+      [(ngModel)]="date"
+      type="date"
+      max="{{ todaysDate }}"
+    />
   </label>
-  <button routerLink="/asteroids/{{ date }}">get asteroids</button>
+  <button (click)="buttonClick()">get asteroids</button>
 </div>
