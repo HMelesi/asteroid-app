@@ -11,6 +11,10 @@ import { Location } from '@angular/common';
 })
 export class AsteroidDetailComponent implements OnInit {
   asteroidDetail: Detail;
+  error: boolean = false;
+  loading: boolean = true;
+  errorStatus: number;
+  errorMessage: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,9 +32,19 @@ export class AsteroidDetailComponent implements OnInit {
 
   getAsteroid(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.dataService.getAsteroidDetail(id).subscribe((data) => {
-      console.dir(data);
-      this.asteroidDetail = data;
-    });
+    this.dataService.getAsteroidDetail(id).subscribe(
+      (data) => {
+        this.asteroidDetail = data;
+        this.loading = false;
+      },
+      (error: any) => {
+        if (error) {
+          this.errorStatus = error.status;
+          this.errorMessage = error.statusText;
+          this.error = true;
+          this.loading = false;
+        }
+      }
+    );
   }
 }
