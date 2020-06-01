@@ -49,4 +49,10 @@
     </li>
   </ul>
 </div>
-<div *ngIf="!asteroidDetail"><app-loading></app-loading></div>
+<div *ngIf="loading"><app-loading></app-loading></div>
+<div *ngIf="error">
+  <app-error
+    [errorStatus]="errorStatus"
+    [errorMessage]="errorMessage"
+  ></app-error>
+</div>
