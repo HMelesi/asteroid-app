@@ -89,6 +89,6 @@ ul {
 li {
   border: var(--color--lilac) solid 2px;
   border-radius: 5px;
-  margin: 10px 0px 10px 0px;
-  padding: 10px;
+  margin: 20px 0px 20px 0px;
+  padding: 10px 20px 20px 20px;
 }
