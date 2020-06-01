@@ -2,18 +2,23 @@
   href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap"
   rel="stylesheet"
 />
+<link
+  href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&display=swap"
+  rel="stylesheet"
+/>
 
 <div class="content" role="main">
   <div class="header">
     <header>
-      <h1 class="title">ASTEROIDS</h1>
+      <h1 class="title">ASTEROIDS BY DATE</h1>
     </header>
     <nav>
-      <a class="link__white" routerLink="/dateselect" routerLinkActive="active"
-        >find asteroids by date</a
+      <a class="link__blue" routerLink="/dateselect" routerLinkActive="active"
+        >new search</a
       >
     </nav>
   </div>
-
-  <router-outlet></router-outlet>
+  <div class="routes">
+    <router-outlet></router-outlet>
+  </div>
 </div>

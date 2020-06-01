@@ -10,7 +10,9 @@
 }
 
 body {
-  background-color: var(--color--darkest);
+  background-color: var(--color--dark);
+  background-image: url("space.jpg");
+  background-size: auto 100vh;
 }
 
 .content {
@@ -21,9 +23,27 @@ body {
 
 .header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--color--darkest);
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.routes {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color--darkest);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
 }
 
 .link__white {
@@ -34,17 +54,31 @@ body {
   color: var(--color--light);
 }
 
+.link__blue {
+  color: var(--color--blue);
+}
+
+.link__blue:visited {
+  color: var(--color--blue);
+}
+
 .title {
   color: var(--color--pink);
+  font-family: "Orbitron", sans-serif;
+}
+
+h4 {
+  color: var(--color--lilac);
 }
 
 button {
-  background-color: transparent;
-  color: var(--color--blue);
-  border: var(--color--blue) solid 2px;
+  background-color: var(--color--blue);
+  color: var(--color--darkest);
+  border: none;
   border-radius: 5px;
   font-family: "Exo 2", sans-serif;
-  font-size: medium;
+  font-size: small;
+  padding: 10px;
 }
 
 ul {

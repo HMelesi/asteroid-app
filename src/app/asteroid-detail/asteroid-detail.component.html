@@ -1,21 +1,32 @@
 <div *ngIf="asteroidDetail">
   <button (click)="goBack()">back to list</button>
-  <h2 class="name">{{ asteroidDetail.name }}</h2>
-  <h4>Absolute magnitude: {{ asteroidDetail.absolute_magnitude_h }}H</h4>
+  <h2 class="name title">{{ asteroidDetail.name }}</h2>
+  <h4>Absolute magnitude:</h4>
+  <h5>{{ asteroidDetail.absolute_magnitude_h }}H</h5>
   <h4>
-    Estimated diameter (miles): <br /><br />
-    minimum: {{ asteroidDetail.estimated_diameter.miles.estimated_diameter_min
-    }}<br />
-    maximum:
-    {{ asteroidDetail.estimated_diameter.miles.estimated_diameter_max }}
+    Estimated diameter:
   </h4>
+  <h5>
+    {{
+      asteroidDetail.estimated_diameter.miles.estimated_diameter_min | number
+    }}
+    -
+    {{
+      asteroidDetail.estimated_diameter.miles.estimated_diameter_max | number
+    }}
+    miles
+  </h5>
   <h4>
     Potentially hazardous:
-    {{ asteroidDetail.is_potentially_hazardous_asteroid }}
   </h4>
-  <h4>Sentry object: {{ asteroidDetail.is_sentry_object }}</h4>
-
-  <h3 class="name">Close approach history:</h3>
+  <h5>
+    {{ asteroidDetail.is_potentially_hazardous_asteroid }}
+  </h5>
+  <h4>Sentry object:</h4>
+  <h5>
+    {{ asteroidDetail.is_sentry_object }}
+  </h5>
+  <h3 class="name title">Close approach history:</h3>
   <p>
     {{ asteroidDetail.name }} has been observed
     {{ asteroidDetail.close_approach_data.length | number }} times
@@ -30,7 +41,12 @@
         per hour
       </p>
       <p>Date: {{ approach.close_approach_date_full | date }}</p>
-      <p></p>
+      <a
+        class="link__blue"
+        routerLink="/asteroids/{{ approach.close_approach_date }}"
+        >see all asteroids on this date</a
+      >
     </li>
   </ul>
 </div>
+<div *ngIf="!asteroidDetail"><app-loading></app-loading></div>

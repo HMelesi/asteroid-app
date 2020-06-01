@@ -7,7 +7,10 @@ import { DateInputComponent } from './date-input/date-input.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dateselect', pathMatch: 'full' },
   { path: 'dateselect', component: DateInputComponent },
-  { path: 'asteroids/:date', component: AsteroidsComponent },
+  {
+    path: 'asteroids/:date',
+    component: AsteroidsComponent,
+  },
   { path: 'detail/:id', component: AsteroidDetailComponent },
 ];
 

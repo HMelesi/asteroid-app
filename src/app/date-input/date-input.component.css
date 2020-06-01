@@ -10,7 +10,7 @@
 .dateinput {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .dateinput__field {
@@ -20,5 +20,6 @@
 .dateinput__field__date {
   color: var(--color--blue);
   border: var(--color--pink) solid 2px;
+  padding: 5px;
   border-radius: 5px;
 }
