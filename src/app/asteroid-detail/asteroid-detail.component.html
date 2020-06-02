@@ -40,7 +40,7 @@
         Speed: {{ approach.relative_velocity.miles_per_hour | number }} miles
         per hour
       </p>
-      <p>Date: {{ approach.close_approach_date_full | date }}</p>
+      <p>Date: {{ approach.close_approach_date | date }}</p>
       <a
         class="link__blue"
         routerLink="/asteroids/{{ approach.close_approach_date }}"
