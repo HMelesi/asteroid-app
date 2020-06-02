@@ -35,7 +35,7 @@
   <ul>
     <li *ngFor="let approach of asteroidDetail.close_approach_data">
       <p>Planet: {{ approach.orbiting_body | uppercase }}</p>
-      <p>Distance: {{ approach.miss_distance.miles | number }} miles</p>
+      <p>Missed by: {{ approach.miss_distance.miles | number }} miles</p>
       <p>
         Speed: {{ approach.relative_velocity.miles_per_hour | number }} miles
         per hour
